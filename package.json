@@ -1,9 +1,49 @@
 {
   "name": "fivem-hooks",
-  "version": "1.0.0",
+  "version": "1.0.0-rc1",
   "description": "Essential React hooks for FiveM NUI development written in Typescript",
   "main": "index.js",
   "repository": "git@github.com:antonstjernquist/fivem-hooks.git",
   "author": "Anton Stjernquist <antonstjernquist@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "^4.3.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.7",
+    "@types/jest": "^26.0.23",
+    "@types/react": "^17.0.9",
+    "@types/react-dom": "^17.0.6",
+    "global-jsdom": "^8.1.0",
+    "jest": "^27.0.3",
+    "jsdom": "^16.6.0",
+    "ts-jest": "^27.0.2"
+  },
+  "jest": {
+    "verbose": true,
+    "roots": [
+      "<rootDir>"
+    ],
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest-setup.js"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.+(ts|tsx|js)",
+      "**/?(*.)+(spec|test).+(ts|tsx|js)"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    }
+  }
 }
