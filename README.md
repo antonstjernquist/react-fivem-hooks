@@ -1,3 +1,3 @@
 # FiveM Hooks
 
-A set of hooks to be used with FiveM - WIP
+Essential React hooks for FiveM NUI development written in Typescript
