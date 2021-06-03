@@ -23,16 +23,25 @@ ReactDOM.render(
 import { useNuiEvent } from 'fivem-hooks';
 
 export const Component = () => {
-  const { data } = useNuiEvent<boolean>({ event: 'SET_NUI_OPEN' });
-
-  if (!data) {
-    return null;
-  }
+  const { data: isOpen } = useNuiEvent<boolean>({ event: 'SET_NUI_OPEN' });
 
   return (
     <div>
-      <span>Profit.</span>
+      <span>{isOpen ? 'Profit.' : 'Closed.'}</span>
     </div>
   );
 }
 ```
+
+## Send the event (Browser console)
+```Javascript
+// Should display "Profit."
+window.postMessage({ type: 'SET_NUI_OPEN', payload: true });
+  
+  
+// Should display "Closed."
+window.postMessage({ type: 'SET_NUI_OPEN', payload: false });
+```
+
+
+
