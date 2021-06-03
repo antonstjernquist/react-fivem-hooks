@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Publish new version to NPM
+name: Published to NPM
 
 # Controls when the action will run. 
 on:
@@ -27,12 +27,17 @@ jobs:
       - run: yarn --production=false
       - name: Test
         run: yarn test
+        
+      - uses: myrotvorets/info-from-package-json-action@1.0.5
+        id: ver
+
 
       - name: Publishing to NPM
         id: publish
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
+          tag: ${{ steps.ver.outputs.packageVersion }}
           check-version: true
 
       - if: steps.publish.outputs.type != 'none'
