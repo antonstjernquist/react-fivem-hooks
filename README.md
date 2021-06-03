@@ -1,4 +1,4 @@
-[![Publish new version to NPM](https://github.com/antonstjernquist/fivem-hooks/actions/workflows/publish.yml/badge.svg)](https://github.com/antonstjernquist/fivem-hooks/actions/workflows/publish.yml)
+[![Publish](https://github.com/antonstjernquist/fivem-hooks/actions/workflows/publish.yml/badge.svg)](https://github.com/antonstjernquist/fivem-hooks/actions/workflows/publish.yml)
 
 # FiveM Hooks
 
