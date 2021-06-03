@@ -44,4 +44,6 @@ window.postMessage({ type: 'SET_NUI_OPEN', payload: false });
 ```
 
 
+### Disclaimer
+We are not affiliated, associated, authorized, endorsed by, or in any way officially connected with the FiveM™ trademark, or any of its subsidiaries or its affiliates. The official FiveM™ website can be found at https://fivem.net/
 
