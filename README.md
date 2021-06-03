@@ -1,5 +1,5 @@
 
-[![code type](https://img.shields.io/npm/types/react-fivem-hooks)](https://github.com/antonstjernquist) [![action](https://github.com/antonstjernquist/react-fivem-hooks/actions/workflows/publish.yml/badge.svg)](https://github.com/antonstjernquist/react-fivem-hooks/actions/workflows/publish.yml) [![npm version](https://img.shields.io/npm/v/react-fivem-hooks)](https://www.npmjs.com/package/react-fivem-hooks) [![downloads](https://img.shields.io/npm/dw/fivem-hooks?color=%2334D058)](https://www.npmjs.com/package/react-fivem-hooks) 
+[![code type](https://img.shields.io/npm/types/react-fivem-hooks)](https://github.com/antonstjernquist) [![action](https://github.com/antonstjernquist/react-fivem-hooks/actions/workflows/publish.yml/badge.svg)](https://github.com/antonstjernquist/react-fivem-hooks/actions/workflows/publish.yml) [![npm version](https://img.shields.io/npm/v/react-fivem-hooks)](https://www.npmjs.com/package/react-fivem-hooks) [![downloads](https://img.shields.io/npm/dw/react-fivem-hooks?color=%2334D058)](https://www.npmjs.com/package/react-fivem-hooks) 
 
 # React FiveM Hooks
 
