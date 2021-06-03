@@ -31,8 +31,7 @@ export const Component = () => {
 
   return (
     <div>
-      <h1>NUI Content</h1>
-      <span>Hello this is displayed</span>
+      <span>Profit.</span>
     </div>
   );
 }
