@@ -1,4 +1,4 @@
-[![published action status](https://github.com/antonstjernquist/fivem-hooks/actions/workflows/publish.yml/badge.svg)](https://github.com/antonstjernquist/fivem-hooks/actions/workflows/publish.yml) [![npm version](https://badge.fury.io/js/fivem-hooks@2x.png)](https://badge.fury.io/js/fivem-hooks)
+[![published action status](https://github.com/antonstjernquist/fivem-hooks/actions/workflows/publish.yml/badge.svg)](https://github.com/antonstjernquist/fivem-hooks/actions/workflows/publish.yml) [![npm version](https://badge.fury.io/js/fivem-hooks.png)](https://badge.fury.io/js/fivem-hooks)
 # FiveM Hooks
 
 Essential React hooks for FiveM NUI development written in Typescript
