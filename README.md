@@ -5,6 +5,8 @@
 
 Essential React hooks for FiveM NUI development written in Typescript
 
+## Install the package
+```yarn add react-fivem-hooks```
 
 ## Wrap the component in the provider
 ```Typescript
