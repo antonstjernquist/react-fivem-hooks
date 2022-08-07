@@ -11,9 +11,13 @@ export interface NUIContext {
 
 export const NuiContext = createContext<NUIContext>({
   removeHandler: () => {
-    console.log('Failed to remove event. The context has not been initialized');
+    console.error(
+      'Failed to remove event. The context has not been initialized. Make sure to wrap your component with the <NUIProvider />'
+    );
   },
   addHandler: () => {
-    console.log('Failed to add event. The context has not been initialized');
+    console.error(
+      'Failed to add event. The context has not been initialized. Make sure to wrap your component with the <NUIProvider />'
+    );
   },
 });
