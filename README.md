@@ -20,7 +20,7 @@ ReactDOM.render(
 );
 ```
 
-## Use the hook, specify the type it will return
+## useNuiEvent
 ```Typescript
 import { useNuiEvent } from 'react-fivem-hooks';
 
@@ -44,6 +44,43 @@ window.postMessage({ type: 'SET_NUI_OPEN', payload: true });
 // Should display "Closed."
 window.postMessage({ type: 'SET_NUI_OPEN', payload: false });
 ```
+
+
+## useDisableControls (Disable input movement)
+#### Generic hook to disable movement in FiveM when typing inside a input field.
+
+**Note**: This feature requires the `nui-controls` library to be used on the client.
+
+```Typescript
+import { useDisableControls } from 'react-fivem-hooks';
+
+export const Component = () => {
+  const { controls } = useDisableControls();
+
+  return (
+    <div>
+      <input placeholder="Yay, I don't move" {controls} />
+    </div>
+  );
+}
+```
+
+
+## nui-controls (lua client library)
+#### This is a resource included in this repository which you can utilise to easily disable controls when using input fields in your NUI.
+
+1. Download `nui-controls` from this repository.
+2. Put it in your server folder.
+3. Add it to the resource you want to use the `useDisableControls`-hook like this:
+
+```LUA
+client_scripts {
+  '@nui-controls/client.lua',
+  '...',
+}
+```
+
+4. Now you can utilise `useDisableControls` in your NUI.
 
 
 ### Disclaimer
