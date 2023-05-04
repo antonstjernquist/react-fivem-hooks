@@ -59,7 +59,7 @@ export const Component = () => {
 
   return (
     <div>
-      <input placeholder="Yay, I don't move" {controls} />
+      <input placeholder="Yay, I don't move" {...controls} />
     </div>
   );
 }
