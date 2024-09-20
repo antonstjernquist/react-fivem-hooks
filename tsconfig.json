@@ -5,8 +5,7 @@
     "esModuleInterop": true,
     "outDir": "dist",
     "declaration": true,
-    "skipLibCheck": true,
-    "types": ["vitest/globals", "@testing-library/jest-dom"]
+    "skipLibCheck": true
   },
   "include": ["src"],
   "exclude": ["node_modules"]
