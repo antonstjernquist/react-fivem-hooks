@@ -1,19 +1,18 @@
-import React, { createContext } from "react";
-import { render, screen, waitFor } from "@testing-library/react";
-import { NuiProvider } from "../src/provider/NuiProvider";
-import { useNuiEvent } from "../src/hooks/useNuiEvent";
-import { NUIContext } from "../src/context/NuiContext";
-import { act } from "react-dom/test-utils";
-import { describe, it, afterEach, vi, expect } from "vitest";
+import React, { createContext } from 'react';
+import { render, screen, waitFor } from '@testing-library/react';
+import { NuiProvider } from '../src/provider/NuiProvider';
+import { useNuiEvent } from '../src/hooks/useNuiEvent';
+import { NUIContext } from '../src/context/NuiContext';
+import { act } from 'react-dom/test-utils';
 
-import { cleanup } from "@testing-library/react";
+import { cleanup } from '@testing-library/react';
 
 afterEach(() => {
   cleanup();
 });
 
-describe("Testing NuiProvider", () => {
-  it("should have called addHandler & removeHandler", () => {
+describe('Testing NuiProvider', () => {
+  it('should have called addHandler & removeHandler', () => {
     const addHandler = vi.fn();
     const removeHandler = vi.fn();
     const HandlersComponent = () => {
@@ -23,7 +22,7 @@ describe("Testing NuiProvider", () => {
       } as NUIContext);
 
       useNuiEvent({
-        event: "UNKNOWN",
+        event: 'UNKNOWN',
         context: TestContext,
       });
 
@@ -33,20 +32,20 @@ describe("Testing NuiProvider", () => {
     const component = render(
       <NuiProvider>
         <HandlersComponent />
-      </NuiProvider>
+      </NuiProvider>,
     );
 
-    expect(screen.getByText("I hereby render!")).toBeInTheDocument();
+    expect(screen.getByText('I hereby render!')).toBeInTheDocument();
     expect(addHandler).toHaveBeenCalledTimes(1);
     component.unmount();
     expect(removeHandler).toHaveBeenCalledTimes(1);
   });
 
-  it("should have ran the callback when message was posted", async () => {
+  it('should have ran the callback when message was posted', async () => {
     const callback = vi.fn();
     const CallbackComponent = () => {
       useNuiEvent({
-        event: "CALLBACK_EVENT",
+        event: 'CALLBACK_EVENT',
         callback,
       });
 
@@ -56,26 +55,26 @@ describe("Testing NuiProvider", () => {
     render(
       <NuiProvider>
         <CallbackComponent />
-      </NuiProvider>
+      </NuiProvider>,
     );
 
-    expect(screen.getByText("I hereby render!")).toBeInTheDocument();
+    expect(screen.getByText('I hereby render!')).toBeInTheDocument();
     act(() => {
-      window.postMessage({ type: "CALLBACK_EVENT", payload: "Amazing!" }, "*");
+      window.postMessage({ type: 'CALLBACK_EVENT', payload: 'Amazing!' }, '*');
     });
 
     await waitFor(() => {
-      expect(callback).toHaveBeenCalledWith("Amazing!");
+      expect(callback).toHaveBeenCalledWith('Amazing!');
     });
   });
 
-  it("should not remove all handlers when removing handler.", async () => {
+  it('should not remove all handlers when removing handler.', async () => {
     const callback = vi.fn();
     const callbackTwo = vi.fn();
 
     const CallbackComponent = () => {
       useNuiEvent({
-        event: "CALLBACK_EVENT",
+        event: 'CALLBACK_EVENT',
         callback,
       });
 
@@ -84,7 +83,7 @@ describe("Testing NuiProvider", () => {
 
     const CallbackComponentTwo = () => {
       useNuiEvent({
-        event: "CALLBACK_EVENT_TWO",
+        event: 'CALLBACK_EVENT_TWO',
         callback: callbackTwo,
       });
 
@@ -95,15 +94,15 @@ describe("Testing NuiProvider", () => {
       <NuiProvider>
         <CallbackComponent />
         <CallbackComponentTwo />
-      </NuiProvider>
+      </NuiProvider>,
     );
 
     act(() => {
-      window.postMessage({ type: "CALLBACK_EVENT", payload: "Amazing!" }, "*");
+      window.postMessage({ type: 'CALLBACK_EVENT', payload: 'Amazing!' }, '*');
     });
 
     await waitFor(() => {
-      expect(callback).toHaveBeenCalledWith("Amazing!");
+      expect(callback).toHaveBeenCalledWith('Amazing!');
     });
 
     expect(callbackTwo).not.toHaveBeenCalled();
@@ -113,7 +112,7 @@ describe("Testing NuiProvider", () => {
      */
     expect(callback).toHaveBeenCalledTimes(1);
     act(() => {
-      window.postMessage({ type: "CALLBACK_EVENT", payload: "Amazing!" }, "*");
+      window.postMessage({ type: 'CALLBACK_EVENT', payload: 'Amazing!' }, '*');
     });
 
     await waitFor(() => {

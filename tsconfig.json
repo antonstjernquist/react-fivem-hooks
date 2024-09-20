@@ -4,7 +4,10 @@
     "module": "CommonJS",
     "esModuleInterop": true,
     "outDir": "dist",
-    "declaration": true
+    "declaration": true,
+    "skipLibCheck": true,
+    "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
-  "include": ["src", "tests"]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }

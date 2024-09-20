@@ -7,7 +7,7 @@ describe('NuiProvider', () => {
     render(
       <NuiProvider>
         <span>hi</span>
-      </NuiProvider>
+      </NuiProvider>,
     );
 
     expect(screen.getByText('hi')).toBeInTheDocument();

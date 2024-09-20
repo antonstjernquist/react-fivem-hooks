@@ -6,12 +6,13 @@ export default [
   {
     input: `./src/index.ts`,
     plugins: [esbuild()],
+    ignoreFiles: ['**/tests', 'node_modules'],
     output: [
       {
         file: `dist/bundle.js`,
-        format: "cjs",
+        format: 'cjs',
         sourcemap: true,
-        exports: "default",
+        exports: 'default',
       },
     ],
   },
