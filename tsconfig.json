@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
     "jsx": "react",
+    "module": "CommonJS",
     "esModuleInterop": true,
     "outDir": "dist",
     "declaration": true
   },
-  "include": ["src"]
+  "include": ["src", "tests"]
 }
